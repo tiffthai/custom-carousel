@@ -1,6 +1,8 @@
 <template>
   <div id="carouselWrapper">
-    <Carousel />
+    <Carousel 
+      :slideData="slideData"
+    />
   </div>
 </template>
 
@@ -11,6 +13,18 @@ export default {
   name: 'App',
   components: {
     Carousel
+  },
+  data() {
+    return {
+      slideData: []
+    }
+  },
+  created() {
+    fetch('https://frontend-assessment-service.vcomm.io')
+    .then(response => response.json())
+    .then(val => {
+      this.slideData = val.data;
+    });
   }
 }
 </script>
