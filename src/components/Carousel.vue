@@ -46,7 +46,7 @@
               <div
                 class="ctaButton"
                 :class="{ multipleCTAButtons: slide.cta.length > 1 }"
-                @click="goToSubSection(idx, actionIndex)"
+                @click="handleGoToLink(slideIndex, actionIndex)"
               >
                 {{ action.label }}
               </div>
